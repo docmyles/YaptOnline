@@ -6,7 +6,7 @@
 *
 *
 *File Name:Login.php
-*Purpose: Allows user to log in to application.
+*Purpose: Allows user to log into application.
 *************************************************************/?>
 
 <html>
