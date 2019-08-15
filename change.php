@@ -6,7 +6,7 @@
 *
 *File Name:change.php
 *purpose: Allows users to change their passwords once logged in
-*to application.
+*to the application.
 *************************************************************/?>
 
 
