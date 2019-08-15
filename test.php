@@ -10,10 +10,10 @@ define('SENDER', 'support@orgspot.org');
 
 // Replace recipient@example.com with a "To" address. If your account
 // is still in the sandbox, this address must be verified.
-define('RECIPIENT', 'jonathan.jacobs@live.com');
+define('RECIPIENT', 'tbeever@netlander.com');
 
 // Specify a configuration set. If you do not want to use a configuration
-// set, comment the following variable, and the
+// set, comment the following variable, and then
 // 'ConfigurationSetName' => CONFIGSET argument below.
 //define('CONFIGSET','ConfigSet');
 
