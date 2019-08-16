@@ -30,8 +30,7 @@
 					<div class="card">
 						<div class="card-body">
 							<h5 class="card-title">About Yapt</h5>
-							Yapt is an organizational tool designed by Netlander for enhanced contact management by allowing users to save, edit and manage their contacts
-							in one location.
+							Yapt is a productivity tool designed by Netlander to manage To Do's and Contacts.
 						</div>
 					</div>
 				</div>
