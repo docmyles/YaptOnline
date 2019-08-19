@@ -35,7 +35,7 @@
 								<li class="nav-item">
 									<a class="nav-link" href="register.php">Register</a>
 								</li>
-								
+
 							</ul>
 						</div>
 					</div>
@@ -57,7 +57,7 @@
 						<div class="card-body">
 							<h5 class="card-title">About Yapt</h5>
 							Yapt is a productivity tool designed by Netlander to manage To Do's and Contacts.
-							in one location.
+							in one location. Tom Beever is cool.
 						</div>
 					</div>
 				</div>
@@ -76,7 +76,7 @@
 					<small color="white">Made in Florida <i class="fal fa-rocket"></i></small>
 				</div>
 			</footer>
-	
+
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
