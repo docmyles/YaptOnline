@@ -56,7 +56,7 @@
 					<div class="card">
 						<div class="card-body">
 							<h5 class="card-title">About Yapt</h5>
-							Yapt Beever is a productivity tool designed by Netlander to manage To Do's and Contactsin one location. Tom Beever is cool.
+							Yapt Beever is a productivity tool designed by Netlander to manage To Do's and Contactsin one location. Keriann Andersen is cool.
 						</div>
 					</div>
 				</div>
