@@ -7,7 +7,7 @@
 
 <meta name="viewport" content="width = device-width, initial-scale = 1">
 
-	<title>To Do List</title>
+	<title>Goals</title>
 </head>
 <?php
 
@@ -29,7 +29,7 @@
 		{
 			echo "Error: " . $sql . "<br>" . $conn->error;
 		}
-		header("Location: ToDoList.php");
+		header("Location: goals.php");
 	}
 
 	if (isset($_GET['delete_task']))
@@ -44,7 +44,7 @@
 
 
 
-	header("Location: ToDoList.php");
+	header("Location: goals.php");
 	exit;
 	}
 
@@ -61,7 +61,7 @@
 				<div class="form-row">
 
 				  <div class="form-group col-md-10">
-				  	<label for="myInput">To Do List</label>
+				  	<label for="myInput">Goals</label>
 				 	<input type="text" class="form-control" name="myInput" placeholder="...">
 				  </div>
 
@@ -83,7 +83,7 @@
 							<?php $i = 1; while($row = $result->fetch_assoc()) { ?>
 							<td><?php echo $i;?></td>
 							<td class="task"><?php echo $row['task']?></td>
-							<td class="delete"><a href="ToDoList.php?delete_task=<?php echo $row['rowid']; ?>">x</a></td>
+							<td class="delete"><a href="goals.php?delete_task=<?php echo $row['rowid']; ?>">x</a></td>
 						</tr>
 							<?php $i++; } ?>
 					</tbody>

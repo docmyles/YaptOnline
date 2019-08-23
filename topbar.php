@@ -8,7 +8,7 @@
 		  </button>
 		  <div class="collapse navbar-collapse" id="navbarNavDropdown">
 			  <ul class="navbar-nav">
-			  	
+
 			  	<li class="nav-item dropdown">
 			        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			          Contacts
@@ -19,9 +19,17 @@
 				        </div>
 			    </li>
 
-			   
+
 			      <li class="nav-item">
 			        <a class="nav-link" href="ToDoList.php">To do List</a>
+			      </li>
+
+						<li class="nav-item">
+			        <a class="nav-link" href="goals.php">Goals</a>
+			      </li>
+
+						<li class="nav-item">
+			        <a class="nav-link" href="bucketList.php">Bucket List</a>
 			      </li>
 
 			      <li class="nav-item">
