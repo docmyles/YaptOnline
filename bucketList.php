@@ -7,7 +7,7 @@
 
 <meta name="viewport" content="width = device-width, initial-scale = 1">
 
-	<title>To Do List</title>
+	<title>Bucket List</title>
 </head>
 <?php
 
@@ -29,7 +29,7 @@
 		{
 			echo "Error: " . $sql . "<br>" . $conn->error;
 		}
-		header("Location: ToDoList.php");
+		header("Location: bucketList.php");
 	}
 
 	if (isset($_GET['delete_task']))
@@ -44,7 +44,7 @@
 
 
 
-	header("Location: ToDoList.php");
+	header("Location: bucketList.php");
 	exit;
 	}
 
@@ -61,7 +61,7 @@
 				<div class="form-row">
 
 				  <div class="form-group col-md-10">
-				  	<label for="myInput">To Do List</label>
+				  	<label for="myInput">Bucket List</label>
 				 	<input type="text" class="form-control" name="myInput" placeholder="...">
 				  </div>
 
