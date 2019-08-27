@@ -11,44 +11,54 @@
 
 <html>
 	<head>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-107709825-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-107709825-2');
+</script>
+
 		<title> Yapt </title>
 		<link href="css/Landing.css" rel="stylesheet" type="text/css">
 		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-		
+
 		<meta name="viewport" content="width = device-width, initial-scale = 1">
 	</head>
-	
+
 	<body>
 		<div class="container">
 		<div class="col align-self-center" style="width: 600px; margin-top: 50px;">
 		<div class="jumbotron">
-		
+
 		<div class="form-group">
-		
+
 		<h2>Yapt</h2>
-		
+
 		</div>
-		
+
 		<form class="form-horizontal" method="post" action="login.php">
-			
+
 			<?php include('errors.php'); ?>
-			
+
 			<div class="input-group">
 				<label>Username</label>
 				<input type="text" name="username" >
 			</div>
-			
-			
+
+
 			<div class="input-group">
 				<label>Password</label>
 				<input type="password" name="password">
 			</div>
-			
-			
+
+
 			<div class="input-group">
 				<button type="submit" class="btn" name="login">Login</button>
 			</div>
-			
+
 			<p>
 				Not a member? <a href="register.php">Sign up.</a>
 			</p>
@@ -57,14 +67,14 @@
 				 <a href="reset.php">Forgot Password?</a>
 			</p>
 
-			
+
 		</div>
 		</div>
 		</div>
-		
-		
+
+
 		</form>
-		
+
 	</body>
 
 			<footer class="page-footer font-small blue">
@@ -76,5 +86,5 @@
 			</footer>
 
 
-	
+
 </html>
