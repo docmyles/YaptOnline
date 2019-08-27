@@ -1,4 +1,13 @@
 <!DOCTYPE html>
+<?php/************************************************************
+*
+*Yapt-Copyright NetLander, Inc. 2018
+*
+*
+*File Name:goals.php
+*Purpose: Allows user to create goal items.
+*************************************************************/?>
+
 <html>
 <head>
 <?php include('connection.php')?>

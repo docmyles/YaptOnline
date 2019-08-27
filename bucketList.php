@@ -1,4 +1,12 @@
 <!DOCTYPE html>
+<?php/************************************************************
+*
+*Yapt-Copyright NetLander, Inc. 2018
+*
+*
+*File Name:bucketList.php
+*Purpose: Allows user to create bucketList items.
+*************************************************************/?>
 <html>
 <head>
 <?php include('connection.php')?>
