@@ -1,4 +1,12 @@
 <?php include('connection.php')?>
+<?php/************************************************************
+*
+*Yapt-Copyright NetLander, Inc. 2018
+*
+*
+*File Name:about.php
+*Purpose: Allows user to register.
+*************************************************************/?>
 
 <html>
 <head>
@@ -14,10 +22,10 @@
 	<div class="header">
 	<h2>Yapt</h2>
 	</div>
-	
+
 <form class="form-horizontal" method="post" action="register.php">
 
-		<?php include('errors.php'); ?>	
+		<?php include('errors.php'); ?>
 
 <div class="input-group">
 <label>New Member Username</label>
@@ -45,7 +53,7 @@
 	<p>
 			Already a member? <a href="login.php">Sign in</a>
 	</p>
-	
+
 </div>
 </form>
 
@@ -59,4 +67,3 @@
 
 
 </html>
-

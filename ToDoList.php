@@ -1,4 +1,13 @@
 <!DOCTYPE html>
+<?php/************************************************************
+*
+*Yapt-Copyright NetLander, Inc. 2018
+*
+*
+*File Name:about.php
+*Purpose: Allows user to create ToDoList items.
+*************************************************************/?>
+
 <html>
 <head>
 <?php include('connection.php')?>
@@ -18,14 +27,14 @@
 
 	if (isset($_POST["add"]))
 	{
-		
+
 		$sql = "INSERT INTO todolist (task, user ) VALUES ('$task','$_SESSION[user_id]')";
-			
-		if ($conn->query($sql) === TRUE) 
+
+		if ($conn->query($sql) === TRUE)
 		{
 			echo "New record created successfully";
-		} 
-		else 
+		}
+		else
 		{
 			echo "Error: " . $sql . "<br>" . $conn->error;
 		}
@@ -45,7 +54,7 @@
 
 
 	header("Location: ToDoList.php");
-	exit;	
+	exit;
 	}
 
 	?>
@@ -59,15 +68,15 @@
 			<div class="container">
 
 				<div class="form-row">
-				
+
 				  <div class="form-group col-md-10">
 				  	<label for="myInput">To Do List</label>
 				 	<input type="text" class="form-control" name="myInput" placeholder="...">
 				  </div>
-				  
+
 				  <button onclick="saved()" type="submit" class="btn btn-primary" name="add">Add</button>
 				</div>
-				
+
 
 				<table class="table table-bordered table-striped">
 					<thead>
@@ -104,8 +113,8 @@
 
 
 
-			
-			
+
+
 
 			<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

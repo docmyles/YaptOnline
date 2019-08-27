@@ -1,3 +1,11 @@
+<?php/************************************************************
+*
+*Yapt-Copyright NetLander, Inc. 2018
+*
+*
+*File Name:about.php
+*Purpose: Allows user to log in to application.
+*************************************************************/?>
 
 <!DOCTYPE html>
 
