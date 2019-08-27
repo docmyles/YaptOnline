@@ -4,7 +4,7 @@
 *Yapt-Copyright NetLander, Inc. 2018
 *
 *
-*File Name:about.php
+*File Name:goals.php
 *Purpose: Allows user to create goal items.
 *************************************************************/?>
 

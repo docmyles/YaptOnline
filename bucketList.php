@@ -4,7 +4,7 @@
 *Yapt-Copyright NetLander, Inc. 2018
 *
 *
-*File Name:about.php
+*File Name:bucketList.php
 *Purpose: Allows user to create bucketList items.
 *************************************************************/?>
 <html>

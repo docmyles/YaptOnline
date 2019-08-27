@@ -4,7 +4,7 @@
 *Yapt-Copyright NetLander, Inc. 2018
 *
 *
-*File Name:about.php
+*File Name:register.php
 *Purpose: Allows user to register.
 *************************************************************/?>
 

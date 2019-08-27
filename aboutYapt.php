@@ -3,7 +3,7 @@
 *Yapt-Copyright NetLander, Inc. 2018
 *
 *
-*File Name:about.php
+*File Name:aboutYapt.php
 *Purpose: Allows user to log in to application.
 *************************************************************/?>
 
