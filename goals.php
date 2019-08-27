@@ -11,15 +11,15 @@
 </head>
 <?php
 
-	$task = mysqli_real_escape_string($conn,$_POST['myInput']);
-	$sql = "SELECT * FROM todolist WHERE user = '$_SESSION[user_id]'";
+	$goal = mysqli_real_escape_string($conn,$_POST['myInput']);
+	$sql = "SELECT * FROM Goals WHERE user = '$_SESSION[user_id]'";
 	$result = $conn->query($sql);
 
 
 	if (isset($_POST["add"]))
 	{
 
-		$sql = "INSERT INTO todolist (task, user ) VALUES ('$task','$_SESSION[user_id]')";
+		$sql = "INSERT INTO Goals (goal, user ) VALUES ('$goal','$_SESSION[user_id]')";
 
 		if ($conn->query($sql) === TRUE)
 		{
@@ -32,10 +32,10 @@
 		header("Location: goals.php");
 	}
 
-	if (isset($_GET['delete_task']))
+	if (isset($_GET['delete_goal']))
 	{
-		$task_id = $_GET['delete_task'];
-		$sql = "DELETE FROM todolist WHERE rowid = '$task_id'";
+		$goal_id = $_GET['delete_goal'];
+		$sql = "DELETE FROM Goals WHERE rowid = '$goal_id'";
 			 // Prepare statement
 	    $stmt = $conn->prepare($sql);
 
@@ -73,7 +73,7 @@
 					<thead>
 						<tr>
 							<th scope="col">#</th>
-							<th scope="col">Task</th>
+							<th scope="col">Goal</th>
 							<th scope="col">Remove</th>
 						</tr>
 					</thead>
@@ -82,8 +82,8 @@
 						<tr>
 							<?php $i = 1; while($row = $result->fetch_assoc()) { ?>
 							<td><?php echo $i;?></td>
-							<td class="task"><?php echo $row['task']?></td>
-							<td class="delete"><a href="goals.php?delete_task=<?php echo $row['rowid']; ?>">x</a></td>
+							<td class="goal"><?php echo $row['goal']?></td>
+							<td class="delete"><a href="goals.php?delete_goal=<?php echo $row['rowid']; ?>">x</a></td>
 						</tr>
 							<?php $i++; } ?>
 					</tbody>
