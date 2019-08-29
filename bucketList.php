@@ -10,6 +10,16 @@
 *************************************************************/?>
 <html>
 <head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-107709825-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-107709825-2');
+</script>
+
 <?php include('connection.php')?>
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="css/Styles.css" rel="stylesheet" type="text/css">
