@@ -52,7 +52,7 @@
 
 
 						</div>
-						<button type="submit" class="btn btn-primary" name="Save">Save Change</button>
+						<button type="submit" class="btn btn-success" name="Save">Save Change</button>
 						</div>
 					</form>
 

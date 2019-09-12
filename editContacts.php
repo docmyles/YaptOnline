@@ -116,8 +116,8 @@
 								<textarea class="form-control" name="comments"><?php echo $comments; ?> </textarea>
 							</div>
 
-							<button onclick="saved()" type="submit" class="btn btn-primary" name="send">Save Change</button>
-							<button onclick="deleted()" type="submit" class="btn btn-primary" name="delete">Delete Contact</button>
+							<button onclick="saved()" type="submit" class="btn btn-success" name="send">Save Change</button>
+							<button onclick="deleted()" type="submit" class="btn btn-success" name="delete">Delete Contact</button>
 
 	</div>
 
@@ -138,7 +138,7 @@
 
 </body>
 
-			<footer class="page-footer font-small blue">
+			<footer class="page-footer font-small blue bg-dark">
 				<div class="footer-copyright text-center">
 					<a href="aboutYapt.php">About Yapt</a><br />
 					<font color="white"> &copy; 2018 - <?php echo date("Y"); ?> <a href="http://www.netlander.com" target="_blank" >NetLander, Inc.</a><br />

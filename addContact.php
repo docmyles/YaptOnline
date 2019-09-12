@@ -90,7 +90,7 @@
 							<textarea class="form-control" name="comments" placeholder="Comments"></textarea>
 							</div>
 
-							<button onclick="saved()" type="submit" class="btn btn-primary" name="send">Add Contact</button>
+							<button onclick="saved()" type="submit" class="btn btn-success" name="send">Add Contact</button>
 						</div>
 			</form>
 
@@ -105,7 +105,7 @@
 
 		</body>
 
-			<footer class="page-footer font-small blue">
+			<footer class="page-footer font-small blue bg-dark">
 				<div class="footer-copyright text-center">
 					<a href="aboutYapt.php">About Yapt</a><br />
 					<font color="white"> &copy; 2018 - <?php echo date("Y"); ?> <a href="http://www.netlander.com" target="_blank" >NetLander, Inc.</a><br />

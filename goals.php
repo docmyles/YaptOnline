@@ -85,7 +85,7 @@
 				 	<input type="text" class="form-control" name="myInput" placeholder="...">
 				  </div>
 
-				  <button onclick="saved()" type="submit" class="btn btn-primary" name="add">Add</button>
+				  <button onclick="saved()" type="submit" class="btn btn-success" name="add">Add</button>
 				</div>
 
 
