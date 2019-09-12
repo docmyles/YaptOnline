@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<?php/************************************************************
+<?php
+/************************************************************
 *
 *Yapt-Copyright NetLander, Inc. 2018
 *
@@ -15,10 +16,10 @@
 
 <link href="css/Styles.css" rel="stylesheet" type="text/css">
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-		
+
 <meta name="viewport" content="width = device-width, initial-scale = 1">
 
-<?php 
+<?php
 
 	session_start();
 	?>
@@ -38,7 +39,7 @@
 								<label for="currentpassword">Current password</label>
 								<input type="password" class="form-control" name="currentpassword">
 							</div>
-								
+
 							<div class="form-group col-md-2">
 								<label for="newpassword1">New password</label>
 								<input type="password" class="form-control" name="newpassword1">
@@ -48,12 +49,12 @@
 								<label for="newpassword2">Retype Password</label>
 								<input type="password" class="form-control" name="newpassword2">
 							</div>
-								
+
 
 						</div>
-						<button type="submit" class="btn btn-primary" name="Save">Save Change</button>		
+						<button type="submit" class="btn btn-success" name="Save">Save Change</button>
 						</div>
-					</form>			
+					</form>
 
 
 

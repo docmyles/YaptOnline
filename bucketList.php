@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<?php/************************************************************
+<?php
+/************************************************************
 *
 *Yapt-Copyright NetLander, Inc. 2018
 *
@@ -83,7 +84,7 @@
 				 	<input type="text" class="form-control" name="myInput" placeholder="...">
 				  </div>
 
-				  <button onclick="saved()" type="submit" class="btn btn-primary" name="add">Add</button>
+				  <button onclick="saved()" type="submit" class="btn btn-success" name="add">Add</button>
 				</div>
 
 
@@ -101,7 +102,7 @@
 							<?php $i = 1; while($row = $result->fetch_assoc()) { ?>
 							<td><?php echo $i;?></td>
 							<td class="task"><?php echo $row['task']?></td>
-							<td class="delete"><a href="ToDoList.php?delete_task=<?php echo $row['rowid']; ?>">x</a></td>
+							<td class="delete"><a href="bucketList.php?delete_task=<?php echo $row['rowid']; ?>">x</a></td>
 						</tr>
 							<?php $i++; } ?>
 					</tbody>

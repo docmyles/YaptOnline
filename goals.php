@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<?php/************************************************************
+<?php
+/************************************************************
 *
 *Yapt-Copyright NetLander, Inc. 2018
 *
@@ -84,7 +85,7 @@
 				 	<input type="text" class="form-control" name="myInput" placeholder="...">
 				  </div>
 
-				  <button onclick="saved()" type="submit" class="btn btn-primary" name="add">Add</button>
+				  <button onclick="saved()" type="submit" class="btn btn-success" name="add">Add</button>
 				</div>
 
 
