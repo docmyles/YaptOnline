@@ -13,7 +13,7 @@
 
 <?php include('connection.php')?>
 <html>
-
+<head>
 <link href="css/Styles.css" rel="stylesheet" type="text/css">
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -24,7 +24,7 @@
 	session_start();
 	?>
 
-
+</head>
 <title> Yapt </title>
 
 	<body>

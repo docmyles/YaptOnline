@@ -10,11 +10,12 @@
 *************************************************************/?>
 <?php include('connection.php')?>
 <html>
-
+<head>
 <link href="css/Styles.css" rel="stylesheet" type="text/css">
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 <meta name="viewport" content="width= device-width, initial-scale = 1">
+</head>
 <?php
 	session_start();
 	$f_name = mysqli_real_escape_string($conn,$_POST['f_name']);
