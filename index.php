@@ -13,12 +13,13 @@
 <?php include('connection.php')?>
 
 <html>
-
+<head>
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="css/Styles.css" rel="stylesheet" type="text/css">
 
 <meta charset="utf-8">
 <meta name="viewport" content="width = device-width, initial-scale = 1, shrink-to-fit-no">
+</head>
 <?php
 
 	session_start();
