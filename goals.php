@@ -73,7 +73,7 @@
 
 	<body>
 		<?php include('topbar.php')?>
-
+<h6> Goals </h6>
 		<form method="post">
 
 			<div class="container">
@@ -81,7 +81,6 @@
 				<div class="form-row">
 
 				  <div class="form-group col-md-10">
-				  	<label for="myInput">Goals</label>
 				 	<input type="text" class="form-control" name="myInput" placeholder="...">
 				  </div>
 

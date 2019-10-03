@@ -30,8 +30,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width = device-width, initial-scale = 1, shrink-to-fit-no">
 </head>
-<?php
 
+<?php
 	session_start();
 
 	if (!isset($_SESSION['username'])) {
@@ -45,7 +45,6 @@
 		header("location: login.php");
 	}
 
-
 	$sql = "SELECT * FROM contacts WHERE user = '$_SESSION[username]'";
 	$result = $conn->query($sql);
 
@@ -58,7 +57,7 @@
 
 
 
-
+			<h6> Contacts </h6>
 
 
 
