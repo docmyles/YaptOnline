@@ -72,7 +72,7 @@
 
 	<body>
 		<?php include('topbar.php')?>
-
+<h6> Bucket List </h6>
 		<form method="post">
 
 			<div class="container">
@@ -80,7 +80,6 @@
 				<div class="form-row">
 
 				  <div class="form-group col-md-10">
-				  	<label for="myInput">Bucket List</label>
 				 	<input type="text" class="form-control" name="myInput" placeholder="...">
 				  </div>
 
