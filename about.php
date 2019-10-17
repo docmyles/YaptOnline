@@ -5,7 +5,7 @@
 *
 *
 *File Name:about.php
-*Purpose: Allows user to log in to application.
+*Purpose: Tells user about application.
 *************************************************************/?>
 
 <!doctype html>
@@ -67,7 +67,7 @@
 					<div class="card">
 						<div class="card-body">
 							<h5 class="card-title">About Yapt</h5>
-							Yapt Online is a productivity tool designed by Netlander to manage To Do's and Contactsin one location. Jean Perez is cool.
+							Yapt Online is a productivity tool designed by Netlander to manage your life and goals in one location.
 						</div>
 					</div>
 				</div>
