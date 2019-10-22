@@ -34,6 +34,10 @@
 	$task = mysqli_real_escape_string($conn,$_POST['myInput']);
 	$sql = "SELECT * FROM todolist WHERE user = '$_SESSION[user_id]'";
 	$result = $conn->query($sql);
+  $sql = "SELECT score FROM users WHERE user = '$_SESSION[user_id]''";
+  $result2 = $conn->query($sql);
+  echo $result2;
+
 
 
 	if (isset($_POST["add"]))
