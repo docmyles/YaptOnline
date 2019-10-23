@@ -48,6 +48,7 @@
 	$sql = "SELECT * FROM contacts WHERE user = '$_SESSION[username]'";
 	$result = $conn->query($sql);
 
+
 ?>
 <title>Yapt</title>
 
