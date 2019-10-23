@@ -35,6 +35,18 @@
 	$sql = "SELECT * FROM Goals WHERE user = '$_SESSION[user_id]'";
 	$result = $conn->query($sql);
 
+  $sql2 = "SELECT * FROM users WHERE userID = '$_SESSION[user_id]'";
+  $result2 = $conn->query($sql2);
+
+  if ($result2->num_rows > 0) {
+    // output data of each row
+    while($row = $result2->fetch_assoc()) {
+        echo "   Score: " . $row["score"];
+    }
+} else {
+    echo "0 results";
+}
+
 
 	if (isset($_POST["add"]))
 	{
@@ -44,6 +56,8 @@
 		if ($conn->query($sql) === TRUE)
 		{
 			echo "New record created successfully";
+      $sql ="UPDATE users Set score = score + 10 WHERE userID ='$_SESSION[user_id]'";
+      ($conn->query($sql));
 		}
 		else
 		{
@@ -112,7 +126,7 @@
 
 		<script>
 			function saved() {
-			  alert("Item added!");
+			  alert("Item added! Good Job!");
 			}
 
 		</script>
