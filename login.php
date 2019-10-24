@@ -30,13 +30,12 @@
 	</head>
 
 	<body>
+		<p style="text-align:center;font-size:160%;"><strong>Yapt Online</strong></p>
 		<div class="container">
-		<div class="col align-self-center" style="width: 600px; margin-top: 50px;">
+		<div class="col align-self-center" style="width: 400px; margin: 0 auto;">
 		<div class="jumbotron">
 
 		<div class="form-group">
-
-		<h2>Yapt</h2>
 
 		</div>
 
@@ -54,20 +53,17 @@
 				<label>Password</label>
 				<input type="password" name="password">
 			</div>
-
+			<p>
+				 <a href="reset.php">Forgot Password?</a>
+			</p>
 
 			<div class="input-group">
-				<button type="submit" class="btn" name="login">Login</button>
+				<button type="submit" class="btn btn-success" name="login">Login</button>
 			</div>
 
 			<p>
 				Not a member? <a href="register.php">Sign up.</a>
 			</p>
-
-			<p>
-				 <a href="reset.php">Forgot Password?</a>
-			</p>
-
 
 		</div>
 		</div>
@@ -78,6 +74,7 @@
 
 	</body>
 
+    <section class="bg-light">
 			<footer class="page-footer font-small blue">
 				<div class="footer-copyright text-center">
 					<a href="about.php">About Yapt</a><br />
@@ -85,7 +82,7 @@
 					<small color="black">Made in Florida <i class="fal fa-rocket"></i></small>
 				</div>
 			</footer>
-
+    </section>
 
 
 </html>
