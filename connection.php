@@ -117,7 +117,13 @@
 				$_SESSION['username'] = $username;
 				$_SESSION['user_id'] = $row['userID'];
 				$_SESSION['success'] = "You are now logged in";
-				header('location: index.php');
+
+				if ($row['firstLogin'] != True){
+					mysqli_query($conn,"UPDATE users SET firstLogin = 1 WHERE username = '$username'");
+					header('location: welcome.php');
+				}else{
+							header('location: index.php');
+						 }
 			}else {
 				array_push($errors, "Wrong username/password combination");
 			}
