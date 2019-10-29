@@ -5,7 +5,7 @@
 *
 *
 *File Name:aboutYapt.php
-*Purpose: Allows user to log in to application.
+*Purpose: Tells users about application.
 *************************************************************/?>
 
 <!DOCTYPE html>
@@ -46,23 +46,19 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
-					<div class="card">
-						<div class="card-body">
-							<h5 class="card-title">About Yapt</h5>
-							Yapt Online is a productivity tool designed by Netlander to manage To Do's and Contacts. Jean Perez is cool.
+          <p style="text-align:center;font-size:180%;"> <strong>Yapt Online</strong> is a productivity tool designed by Netlander to manage your life.</p>
+           <p style="text-align:center;font-size:160%;color:gray"> <strong> Our goal</strong> is to help you achive the best you can be by keeping track of everything from life goals, finances, car maintenance and anything in between! Register now, take a tour, and start getting your life on track today!</p>
 						</div>
 					</div>
 				</div>
-			</div>
-		</div>
-	</section>
+    	</section>
 
 
 
 </body>
 
 	<section class="bg-light">
-		<footer class="page-footer font-small blue">
+		<footer class="page-footer font-small blue fix-bottom">
 					<div class="footer-copyright text-center">
 						<a href="about.php">About Yapt</a><br />
 						<font color="black"> &copy; 2018 - <?php echo date("Y"); ?> <a href="http://www.netlander.com" target="_blank" >NetLander, Inc.</a><br />
