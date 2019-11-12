@@ -92,7 +92,7 @@
 
 	<footer class="page-footer font-small blue">
 				<div class="footer-copyright text-center">
-					<a href="about.php">About Yapt</a><br />
+					<a href="about.php">About Yapt</a> <a href="#">Privacy</a><br />
 					<font color="white"> &copy; 2018 - <?php echo date("Y"); ?> <a href="http://www.netlander.com" target="_blank" >NetLander, Inc.</a><br />
 					<small color="white">Made in Florida <i class="fal fa-rocket"></i></small>
 				</div>
