@@ -118,7 +118,7 @@ gtag('config', 'UA-107709825-2');
 
 			<footer class="page-footer font-small blue bg-light">
 				<div class="footer-copyright text-center">
-					<a href="aboutYapt.php">About Yapt</a> <a href="#">Privacy</a><br />
+					<a href="aboutYapt.php">About Yapt</a> - <a href="privacy.php">Privacy</a><br />
 					<font color="black"> &copy; 2018 - <?php echo date("Y"); ?> <a href="http://www.netlander.com" target="_blank" >NetLander, Inc.</a><br />
 					<small color="black">Made in Florida <i class="fal fa-rocket"></i></small>
 				</div>
