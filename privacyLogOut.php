@@ -1,4 +1,4 @@
-<?php include('connection.php')?>
+
 
 <?php
 /************************************************************
@@ -11,7 +11,27 @@
 *************************************************************/?>
 <!DOCTYPE html>
 <html>
-	<?php include('topbar.php')?>
+<nav class="navbar navbar-expand-xl navbar-dark bg-dark">
+	<div class="container-fluid">
+	<a class="navbar-brand" href="index.php">Yapt</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarNavDropdown">
+		<ul class="navbar-nav">
+
+		 <li class="nav-item">
+			<a class="nav-link" href="login.php">Login</a>
+		 </li>
+
+		 <li class="nav-item">
+			<a class="nav-link" href="register.php">Register</a>
+		</li>
+	 </ul>
+ </div>
+</div>
+</nav>
+
  <head>
    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
    <link href="css/Styles.css" rel="stylesheet" type="text/css">
@@ -45,7 +65,7 @@
 <section class="bg-light">
   <footer class="page-footer font-small blue">
     <div class="footer-copyright text-center">
-      <a href="about.php">About Yapt</a> - <a href="privacy.php">Privacy</a><br />
+      <a href="about.php">About Yapt</a> - <a href="privacyLogOut.php">Privacy</a><br />
       <font color="black"> &copy; 2018 - <?php echo date("Y"); ?> <a href="http://www.netlander.com" target="_blank" >NetLander, Inc.</a><br />
       <small color="black">Made in Florida <i class="fal fa-rocket"></i></small>
     </div>
