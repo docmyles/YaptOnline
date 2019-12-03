@@ -36,6 +36,16 @@
 
 		$emailaddress = mysqli_real_escape_string($conn,$_POST['register_email']);
 
+		//this sets the security answers when users register new account
+		$securityAnswer1 = mysqli_real_escape_string($conn,$_POST['securityAnswer1']);
+		$securityAnswer2 = mysqli_real_escape_string($conn,$_POST['securityAnswer2']);
+		$securityAnswer3 = mysqli_real_escape_string($conn,$_POST['securityAnswer3']);
+
+		//this will store the security question in the form of an int
+		$securityQuestion1 = $_POST['select1'];
+		$securityQuestion2 = $_POST['select2'];
+		$securityQuestion3 = $_POST['select3'];
+
 		$username_results = mysqli_query($conn, "SELECT * FROM users WHERE username='$username'");
 		$email_results = mysqli_query($conn, "SELECT * FROM users WHERE useremail='$emailaddress'");
 
@@ -62,6 +72,18 @@
 			array_push($errors, "Email Address is required");
 		}
 
+	/*	if (empty($securityAnswer1)){
+			array_push($errors, "Answer1 is required");
+		}
+
+		if (empty($securityAnswer2)){
+			array_push($errors, "Answer2 is required");
+		}
+
+		if (empty($securityAnswer3)){
+			array_push($errors, "Answer3 is required");
+		} */
+
 		if (mysqli_num_rows($username_results) > 0){
 			array_push($errors,"Username already exists");
 		}
@@ -72,8 +94,15 @@
 
 		if (count($errors) == 0) {
 			$query = "INSERT INTO users (username, userpass, useremail) VALUES('$username', '$newpassword', '$emailaddress')";
-
 			mysqli_query($conn,$query);
+
+			$newResults = mysqli_query($conn, "SELECT * FROM users WHERE username='$username'");
+			$newRow = $newResults->fetch_assoc();
+			$userID = $newRow['userID'];
+
+			$newQuery = "INSERT INTO recovery (userID, firstQuestion, secondQuestion, thirdQuestion, firstAnswer, secondAnswer, thirdAnswer) VALUES('$userID', '$securityQuestion1', '$securityQuestion2', '$securityQuestion3', '$securityAnswer1', '$securityAnswer2', '$securityAnswer3')";
+			mysqli_query($conn,$newQuery);
+
 			header('location: index.php');
 		}
 
@@ -109,24 +138,22 @@
 			if(password_verify($password, $row['userpass']))
 			{
 
+				if (mysqli_num_rows($results) == 1) {
 
 
-			if (mysqli_num_rows($results) == 1) {
+					$_SESSION['username'] = $username;
+					$_SESSION['user_id'] = $row['userID'];
+					$_SESSION['success'] = "You are now logged in";
 
-
-				$_SESSION['username'] = $username;
-				$_SESSION['user_id'] = $row['userID'];
-				$_SESSION['success'] = "You are now logged in";
-
-				if ($row['firstLogin'] != True){
-					mysqli_query($conn,"UPDATE users SET firstLogin = 1 WHERE username = '$username'");
-					header('location: welcome.php');
-				}else{
-							header('location: index.php');
-						 }
-			}else {
-				array_push($errors, "Wrong username/password combination");
-			}
+					if ($row['firstLogin'] != True){
+						mysqli_query($conn,"UPDATE users SET firstLogin = 1 WHERE username = '$username'");
+						header('location: welcome.php');
+					}else{
+								header('location: index.php');
+							 }
+				}else {
+					array_push($errors, "Wrong username/password combination");
+				}
 		}
 	}
 
