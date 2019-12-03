@@ -5,10 +5,9 @@
 *Yapt-Copyright NetLander, Inc. 2018
 *
 *
-*File Name:addContact.php
-*purpose:Allows user to add contact to his/her contact list.
+*File Name:help.php
+*purpose:Allows user to send email with issues.
 *************************************************************/?>
-<?php include('connection.php')?>
 <html>
 <head>
 <link href="css/Styles.css" rel="stylesheet" type="text/css">
@@ -16,52 +15,43 @@
 
 <meta name="viewport" content="width= device-width, initial-scale = 1">
 </head>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-107709825-2"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
 
-gtag('config', 'UA-107709825-2');
-</script>
 
 <?php
 	session_start();
-	$f_name = mysqli_real_escape_string($conn,$_POST['f_name']);
-	$l_name = mysqli_real_escape_string($conn,$_POST['l_name']);
-	$phone = mysqli_real_escape_string($conn,$_POST['phone']);
-	$email = mysqli_real_escape_string($conn,$_POST['email']);
-	$company = mysqli_real_escape_string($conn,$_POST['company']);
-	$comments = mysqli_real_escape_string($conn,$_POST['comments']);
 
-
-	if (isset($_POST["send"]))
-	{
-
-		$sql = "INSERT INTO contacts (firstName, lastName, phoneNumber, emailAddress, companyName, comments, user) VALUES ('$f_name', '$l_name', '$phone', '$email', '$company', '$comments','$_SESSION[username]')";
-
-		if ($conn->query($sql) === TRUE)
-		{
-			echo "New record created successfully";
-		}
-		else
-		{
-			echo "Error: " . $sql . "<br>" . $conn->error;
-		}
-	}
 
 ?>
-		<title>Yapt</title>
+		<title>Yapt Help</title>
 
 
 
 
 		<body>
-		<?php include('topbar.php')?>
+			<nav class="navbar navbar-expand-xl navbar-dark bg-dark">
+				<div class="container-fluid">
+				<a class="navbar-brand" href="index.php">Yapt</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNavDropdown">
+					<ul class="navbar-nav">
 
+					 <li class="nav-item">
+						<a class="nav-link" href="login.php">Login</a>
+					 </li>
 
-<h6> Add Contact </h6>
+					 <li class="nav-item">
+						<a class="nav-link" href="register.php">Register</a>
+					</li>
+				 </ul>
+			 </div>
+			</div>
+			</nav>
+
+  <section style="padding:4rem 0 3rem 0">
+    <p style="text-align:center;font-size:180%;"> <strong>Yapt Online Help</strong></p>
+  </section>
 			<form method="post">
 
 						<div class="container">
@@ -79,13 +69,8 @@ gtag('config', 'UA-107709825-2');
 								</div>
 
 								<div class="form-group col-md-2">
-								<label for="phone">Phone#</label>
-									<input type="text" class="form-control" name="phone" placeholder="123-456-7890">
-								</div>
-
-								<div class="form-group col-md-2">
-								<label for="company">Company</label>
-									<input type="text" class="form-control" name="company" placeholder="NetLander">
+								<label for="phone">Phone Number</label>
+									<input type="text" class="form-control" name="phone" placeholder="xxx-xxx-xxxx">
 								</div>
 							</div>
 
@@ -98,16 +83,16 @@ gtag('config', 'UA-107709825-2');
 							</div>
 
 							<div class="form-group">
-							<textarea class="form-control" name="comments" placeholder="Comments"></textarea>
+							<textarea class="form-control" name="issues" placeholder="Please explain the issues you're experiencing"></textarea>
 							</div>
 
-							<button onclick="saved()" type="submit" class="btn btn-success" name="send">Add Contact</button>
+							<button onclick="saved()" type="submit" class="btn btn-success" name="send">Send</button>
 						</div>
 			</form>
 
 			<script>
 			function saved() {
-			  alert("Contact added!");
+			  alert("Email Sent!");
 			}
 
 
@@ -118,7 +103,7 @@ gtag('config', 'UA-107709825-2');
 
 			<footer class="page-footer font-small blue bg-light">
 				<div class="footer-copyright text-center">
-					<a href="aboutYapt.php">About Yapt</a> - <a href="privacy.php">Privacy</a> - <a href="help.php">Help</a><br />
+					<a href="aboutYapt.php">About Yapt</a> - <a href="privacyLogOut.php">Privacy</a> - <a href="helpLogOut.php">Help</a><br />
 					<font color="black"> &copy; 2018 - <?php echo date("Y"); ?> <a href="http://www.netlander.com" target="_blank" >NetLander, Inc.</a><br />
 					<small color="black">Made in Florida <i class="fal fa-rocket"></i></small>
 				</div>
