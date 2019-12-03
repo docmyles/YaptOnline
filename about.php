@@ -61,8 +61,9 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
-				 <p style="text-align:center;font-size:180%;"> <strong>Yapt Online</strong> is a productivity tool designed by Netlander to manage your life.</p>
-          <p style="text-align:center;font-size:160%;color:gray"> <strong> Our goal</strong> is to help you achive the best you can be by keeping track of everything from life goals, finances, car maintenance and anything in between! Register now, take a tour, and start getting your life on track today!</p>
+          <p style="text-align:center;font-size:180%;"> <strong>About Yapt Online</strong></p>
+				   <p style="text-align:center;font-size:140%;"> <strong>Yapt Online</strong> is a productivity tool designed by Netlander to manage your life.</p>
+            <p style="text-align:center;font-size:140%;color:gray"> <strong> Our goal</strong> is to help you achive the best you can be by keeping track of everything from life goals, finances, car maintenance and anything in between! Register now, take a tour, and start getting your life on track today!</p>
 				</div>
 			</div>
 		</div>
@@ -74,7 +75,7 @@
 
 	<footer class="page-footer font-small blue bg-light">
 				<div class="footer-copyright text-center">
-					<a href="about.php">About Yapt</a><br />
+					<a href="about.php">About Yapt</a> - <a href="privacyLogOut.php">Privacy</a> - <a href="helpLogOut.php">Help</a><br />
 					<font color="black"> &copy; 2018 - <?php echo date("Y"); ?> <a href="http://www.netlander.com" target="_blank" >NetLander, Inc.</a><br />
 					<small color="black">Made in Florida <i class="fal fa-rocket"></i></small>
 				</div>
