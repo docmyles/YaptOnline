@@ -77,7 +77,7 @@
     <section class="bg-light">
 			<footer class="page-footer font-small blue">
 				<div class="footer-copyright text-center">
-					<a href="about.php">About Yapt</a> - <a href="privacyLogOut.php">Privacy</a><br />
+					<a href="about.php">About Yapt</a> - <a href="privacyLogOut.php">Privacy</a> - <a href="helpLogOut.php">Help</a><br />
 					<font color="black"> &copy; 2018 - <?php echo date("Y"); ?> <a href="http://www.netlander.com" target="_blank" >NetLander, Inc.</a><br />
 					<small color="black">Made in Florida <i class="fal fa-rocket"></i></small>
 				</div>

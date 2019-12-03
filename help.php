@@ -5,8 +5,8 @@
 *Yapt-Copyright NetLander, Inc. 2018
 *
 *
-*File Name:addContact.php
-*purpose:Allows user to add contact to his/her contact list.
+*File Name:help.php
+*purpose:Allows user to send email with issues.
 *************************************************************/?>
 <?php include('connection.php')?>
 <html>
@@ -16,43 +16,14 @@
 
 <meta name="viewport" content="width= device-width, initial-scale = 1">
 </head>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-107709825-2"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
 
-gtag('config', 'UA-107709825-2');
-</script>
 
 <?php
 	session_start();
-	$f_name = mysqli_real_escape_string($conn,$_POST['f_name']);
-	$l_name = mysqli_real_escape_string($conn,$_POST['l_name']);
-	$phone = mysqli_real_escape_string($conn,$_POST['phone']);
-	$email = mysqli_real_escape_string($conn,$_POST['email']);
-	$company = mysqli_real_escape_string($conn,$_POST['company']);
-	$comments = mysqli_real_escape_string($conn,$_POST['comments']);
 
-
-	if (isset($_POST["send"]))
-	{
-
-		$sql = "INSERT INTO contacts (firstName, lastName, phoneNumber, emailAddress, companyName, comments, user) VALUES ('$f_name', '$l_name', '$phone', '$email', '$company', '$comments','$_SESSION[username]')";
-
-		if ($conn->query($sql) === TRUE)
-		{
-			echo "New record created successfully";
-		}
-		else
-		{
-			echo "Error: " . $sql . "<br>" . $conn->error;
-		}
-	}
 
 ?>
-		<title>Yapt</title>
+		<title>Yapt Help</title>
 
 
 
@@ -60,8 +31,9 @@ gtag('config', 'UA-107709825-2');
 		<body>
 		<?php include('topbar.php')?>
 
-
-<h6> Add Contact </h6>
+  <section style="padding:4rem 0 3rem 0">
+    <p style="text-align:center;font-size:180%;"> <strong>Yapt Online Help</strong></p>
+  </section>
 			<form method="post">
 
 						<div class="container">
@@ -79,13 +51,8 @@ gtag('config', 'UA-107709825-2');
 								</div>
 
 								<div class="form-group col-md-2">
-								<label for="phone">Phone#</label>
-									<input type="text" class="form-control" name="phone" placeholder="123-456-7890">
-								</div>
-
-								<div class="form-group col-md-2">
-								<label for="company">Company</label>
-									<input type="text" class="form-control" name="company" placeholder="NetLander">
+								<label for="phone">Phone Number</label>
+									<input type="text" class="form-control" name="phone" placeholder="xxx-xxx-xxxx">
 								</div>
 							</div>
 
@@ -98,16 +65,16 @@ gtag('config', 'UA-107709825-2');
 							</div>
 
 							<div class="form-group">
-							<textarea class="form-control" name="comments" placeholder="Comments"></textarea>
+							<textarea class="form-control" name="issues" placeholder="Please explain the issues you're experiencing"></textarea>
 							</div>
 
-							<button onclick="saved()" type="submit" class="btn btn-success" name="send">Add Contact</button>
+							<button onclick="saved()" type="submit" class="btn btn-success" name="send">Send</button>
 						</div>
 			</form>
 
 			<script>
 			function saved() {
-			  alert("Contact added!");
+			  alert("Email Sent!");
 			}
 
 
