@@ -21,6 +21,20 @@
 <title> Privacy Policy </title>
 
 </head>
+<?php
+	session_start();
+
+	if (!isset($_SESSION['username'])) {
+		$_SESSION['msg'] = "You must log in first";
+		header('location: login.php');
+	}
+
+	if (isset($_GET['logout'])) {
+		session_destroy();
+		unset($_SESSION['username']);
+		header("location: login.php");
+	}
+?>
 
     <body>
 			<section style="padding:8rem 0 5rem 0">

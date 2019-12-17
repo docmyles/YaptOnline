@@ -163,60 +163,35 @@
 
 
 	if (isset($_POST['Recover']))
-
 	{
 
+		$emailaddress = mysqli_real_escape_string($_POST['Email_address']);
+		$username = mysqli_real_escape_string($_POST['Username']);
+		$password = mysqli_real_escape_string($_POST['New_password']);
+		$password2 = mysqli_real_escape_string($_POST['New_password2']);
 
-
-
-
-		$emailaddress = mysqli_real_escape_string($conn,$_POST['Email_address']);
-		$username = mysqli_real_escape_string($conn,$_POST['Username']);
-		$password = mysqli_real_escape_string($conn,$_POST['New_password']);
-		$password2 = mysqli_real_escape_string($conn,$_POST['New_password2']);
-
-		if ($password2 == $password)
-		{
-
-
+		ini_set( 'display_errors', 1 );
+    error_reporting( E_ALL );
+    $from = "support@yaptonline.com";
+    $to = "3869720335@tmomail.net";
+    $subject = "Test";
+    $message = "This is a test";
+    $headers = "From: Test";
+    mail($to, $subject, $message, $headers);
+    echo "The email message was sent.";
 
 		#$password = rand(1000,5000); // Generate random number between 1000 and 5000 and assign it to a local variable.
 		#$password = "password";
-		$password = password_hash($password, PASSWORD_DEFAULT);
-		$results = mysqli_query($conn, "SELECT * FROM users WHERE useremail='$emailaddress' AND username = '$username'");
+		//$password = password_hash($password, PASSWORD_DEFAULT);
+		//$results = mysqli_query($conn, "SELECT * FROM users WHERE useremail='$emailaddress' AND username = '$username'");
 
-		$row = $results->fetch_assoc();
-		$name = $row['username'];
+		//$row = $results->fetch_assoc();
+		//$name = $row['username'];
 
-		$to      = $emailaddress; // Send email to our user
-		$subject = 'Password Reset'; // Give the email a subject
-		$message = '
+		//$query = "UPDATE users SET userpass = '$password' WHERE username = '$name' AND useremail = '$to' ";
 
-		Thanks for using Yapt!
-		This is a password reset you may now log in with the following credentials.
-
-
-		------------------------
-		Username: '.$name.'
-		Password: '.$password.'
-		------------------------
-		 You can use your new password at the home page here:
-		 http://dev.orgspot.org/dog/Yapt/login.php
-		 ';
-
-		 // Our message above including the link
-
-		$headers = 'From:noreply@Yapt.com' . "\r\n"; // Set from headers
-		mail($to, $subject, $message, $headers); // Send our email
-		$query = "UPDATE users SET userpass = '$password' WHERE username = '$name' AND useremail = '$to' ";
-
-			mysqli_query($conn,$query);
-			header('location: index.php');
-		}
-
-		else{
-		 echo "Passwords dont match!";
-		}
+			//mysqli_query($conn,$query);
+			//header('location: index.php');
 
 	}
 
