@@ -17,11 +17,7 @@
 </head>
 
 
-<?php
-	session_start();
 
-
-?>
 		<title>Yapt Help</title>
 
 
@@ -48,6 +44,21 @@
 			 </div>
 			</div>
 			</nav>
+
+<?php
+	if (isset($_POST['send']))
+	{
+		ini_set( 'display_errors', 1 );
+	 	error_reporting( E_ALL );
+		$from = mysqli_real_escape_string($_POST['email']);
+		$to = "support@yaptonline.com";
+		$subject = "test";
+		$message = mysqli_real_escape_string($_POST['issues']);
+		$headers = "From:" . $from;
+    mail($to,$subject,$message, $headers);
+	}
+?>
+
 
   <section style="padding:4rem 0 3rem 0">
     <p style="text-align:center;font-size:180%;"> <strong>Yapt Online Help</strong></p>

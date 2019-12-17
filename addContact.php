@@ -27,7 +27,19 @@ gtag('config', 'UA-107709825-2');
 </script>
 
 <?php
-	session_start();
+session_start();
+
+if (!isset($_SESSION['username'])) {
+	$_SESSION['msg'] = "You must log in first";
+	header('location: login.php');
+}
+
+if (isset($_GET['logout'])) {
+	session_destroy();
+	unset($_SESSION['username']);
+	header("location: login.php");
+}
+
 	$f_name = mysqli_real_escape_string($conn,$_POST['f_name']);
 	$l_name = mysqli_real_escape_string($conn,$_POST['l_name']);
 	$phone = mysqli_real_escape_string($conn,$_POST['phone']);
