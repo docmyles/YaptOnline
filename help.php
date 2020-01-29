@@ -88,7 +88,6 @@
 			  alert("Email Sent!");
 			}
 
-
 			</script>
 
 
