@@ -55,9 +55,12 @@
 	use Aws\Ses\Exception\SesException;
 
 	$client = SesClient::factory(array(
-	    'version'=> 'latest',
-	    'region' => REGION
-	));
+    'version'=> 'latest',
+    'region' => REGION,
+	'http'    => [
+        'verify' => false
+    ]
+));
 
 
 
@@ -69,7 +72,7 @@
 
 	$_SESSION['success'] = "";
 
-	// Create connection
+	// Create connection to DB
 	$conn = new mysqli($servername, $dbusername, $dbpassword, $dbname);
 
 //Checks if register is Post
@@ -89,7 +92,7 @@
 
 		//email address variable as string.
 		$emailaddress = mysqli_real_escape_string($conn,$_POST['register_email']);
-		define('RECIPIENT', $emailaddress);
+		define('RECIPIENT1',$_POST['register_email']);
 
 		//this sets the security answers when users register new account
 		$securityAnswer1 = mysqli_real_escape_string($conn,$_POST['securityAnswer1']);
@@ -167,8 +170,7 @@
 			$newQuery = "INSERT INTO recovery (userID, firstQuestion, secondQuestion, thirdQuestion, firstAnswer, secondAnswer, thirdAnswer) VALUES('$userID', '$securityQuestion1', '$securityQuestion2', '$securityQuestion3', '$securityAnswer1', '$securityAnswer2', '$securityAnswer3')";
 			mysqli_query($conn,$newQuery);
 
-			//will send you back to homepage.
-			header('location: index.php');
+
 			//this will send a welcome email to new users.
 			try {
 			     $result = $client->sendEmail([
@@ -199,14 +201,17 @@
 			     $messageId = $result->get('MessageId');
 			     echo("Email sent! Message ID: $messageId"."\n");
 
-			} catch (SesException $error) {
-			     echo("The email was not sent. Error message: ".$error->getAwsErrorMessage()."\n");
 			}
+				catch (SesException $error) {
+				     echo("The email was not sent. Error message: ".$error->getAwsErrorMessage()."\n");
+				}
 		}
 
-
+		//will send you back to homepage.
+		header('location: index.php');
 
 	}
+
 
 
 	//check that login is POST
@@ -268,64 +273,64 @@
 //Instead it will send a temp password to the email typed in.
 	if (isset($_POST['Recover']))
 	{
-		define('SUBJECT','Account Recovery');
+		define('SUBJECT1','Account Recovery');
 
-		define('HTMLBODY','<h1>Yapt Support</h1>'.
-		                  '<p>On this email there will be a temporary password attached.
-													Use this password to log in then you may use the account
-													tab to change to a new secure password.</p>');
+
 
 		$emailaddress = mysqli_real_escape_string($_POST['Email_address']);
 		$username = mysqli_real_escape_string($_POST['Username']);
+		define('RECIPIENT1',$_POST['Email_address']);
 
 
-		ini_set( 'display_errors', 1 );
-    error_reporting( E_ALL );
 
-    $to = $emailaddress;
 
-    echo "The email message was sent.";
+		$password = rand(1000,5000); // Generate random number between 1000 and 5000 and assign it to a local variable.
+		strval($password);
+		$password2 = password_hash($password, PASSWORD_DEFAULT); //encrypt temp PASSWORD
 
-		$password = mysqli_real_escape_string(rand(1000,5000)); // Generate random number between 1000 and 5000 and assign it to a local variable.
+		define('HTMLBODY1','<h1>Yapt Support</h1>'.
+											'<p>On this email there will be a temporary password attached.
+													Use this password to log in then you may use the account
+													tab to change to a new secure password.</p>');
 
-		$password2 = password_hash($password, PASSWORD_DEFAULT);//encrypt temp PASSWORD
+
+
 
 		$results = mysqli_query($conn, "SELECT * FROM users WHERE useremail='$emailaddress' AND username = '$username'");
 
 		$row = $results->fetch_assoc();
 		$name = $row['username'];
 
-		$query = "UPDATE users SET userpass = '$password2' WHERE username = '$name' AND useremail = '$emailaddress' ";
+		$query = "UPDATE users SET userpass = '$password2' WHERE username = '$name' AND useremail = '$emailaddress'";
 
-		define('TEXTBODY','Temporary password is '$password'');
 
 			mysqli_query($conn,$query);
 
 			try {
 			     $result = $client->sendEmail([
-			    'Destination' => [
-			        'ToAddresses' => [
-			            RECIPIENT,
-			        ],
-			    ],
-			    'Message' => [
+						 'Destination' => [
+							 'ToAddresses' => [
+								 RECIPIENT1,
+							 ],
+						 ],
+						 'Message' => [
 			        'Body' => [
 			            'Html' => [
 			                'Charset' => CHARSET,
-			                'Data' => HTMLBODY,
+			                'Data' => $password,
 			            ],
 						'Text' => [
 			                'Charset' => CHARSET,
-			                'Data' => TEXTBODY,
+			                'Data' => $password,
 			            ],
 			        ],
 			        'Subject' => [
 			            'Charset' => CHARSET,
-			            'Data' => SUBJECT,
+			            'Data' => SUBJECT1,
 			        ],
 			    ],
 			    'Source' => SENDER,
-			    
+
 			]);
 			     $messageId = $result->get('MessageId');
 			     echo("Email sent! Message ID: $messageId"."\n");
@@ -333,8 +338,8 @@
 			} catch (SesException $error) {
 			     echo("The email was not sent. Error message: ".$error->getAwsErrorMessage()."\n");
 			}
-		}
-			header('location: index.php');
+
+			//header('location: index.php');
 
 	}
 
